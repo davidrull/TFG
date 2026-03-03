@@ -1,0 +1,1 @@
+Preparar los datos para el entrenamiento del modelo, asegurando que los textos solo contengan información significativa. Esto permite que el modelo aprenda patrones de riesgo emocional sin ruido generado por palabras comunes o signos de puntuación.
