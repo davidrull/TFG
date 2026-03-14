@@ -1,4 +1,6 @@
 import pandas as pd
+
+
 from my_utils import limpiar_y_lemmatizar  # función de limpieza
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -8,7 +10,7 @@ import pickle
 import os
 
 # 1 Cargar dataset
-csv_path = "../../Data/dataset_inicial.csv"
+csv_path = "Data/dataset_inicial.csv"
 df = pd.read_csv(csv_path, sep=";", encoding="utf-8")
 
 # 2 Limpiar nombres de columnas y quitar espacios

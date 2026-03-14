@@ -3,7 +3,7 @@ from my_utils import limpiar_y_lemmatizar  # Importamos la función desde nuestr
 import os
 
 # 1 Ruta del CSV
-csv_path = "../../Data/dataset_inicial.csv"
+csv_path = "Data/dataset_inicial.csv"
 
 # 2 Verificar que el CSV exista
 if not os.path.exists(csv_path):
