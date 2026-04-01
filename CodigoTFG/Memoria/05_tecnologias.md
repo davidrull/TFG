@@ -1,41 +1,33 @@
 Tecnologías utilizadas:
 
-Para el desarrollo de la aplicación se emplearon tecnologías modernas, ampliamente documentadas y compatibles con Python, que permiten cubrir todas las fases del proyecto: preprocesamiento, aprendizaje automático, API y almacenamiento de datos.
+Para el desarrollo de la aplicación se emplearon tecnologías modernas, ampliamente documentadas y compatibles con Python, que permiten cubrir todas las fases del proyecto: preprocesamiento de texto, aprendizaje automático, desarrollo de la API y almacenamiento de datos.
 
 1.Lenguaje de programación:
-
-.Python,elegido por su facilidad de uso, ecosistema de librerías y soporte para Machine Learning y NLP.
-.Permite integrar de manera sencilla las distintas partes del proyecto (ML, API y base de datos).
+.Python: Elegido por su facilidad de uso, amplio ecosistema de librerías y soporte nativo para Machine Learning y procesamiento de lenguaje natural (NLP).
+.Permite integrar de manera eficiente las distintas partes del proyecto: preprocesamiento, modelo de ML, API y base de datos.
 
 2.Procesamiento de lenguaje natural (NLP):
-
-.SpaCy,Para tokenización, lematización y eliminación de stopwords en español.
-.my_utils.py (Archivo personalizado con la función limpiar_y_lemmatizar, reutilizable en todo el proyecto).
+.spaCy: Librería utilizada para tokenización, lematización y eliminación de stopwords en español, garantizando la normalización de los textos.
+.my_utils.py: Archivo personalizado con la función limpiar_y_lemmatizar, que encapsula todo el preprocesamiento y puede reutilizarse en entrenamiento y predicción.
 
 3.Aprendizaje automático:
-
 .scikit-learn:
-.TF-IDF Vectorizer: transforma textos en vectores numéricos.
-.MultinomialNB: modelo de clasificación supervisada para detectar riesgo emocional.
-.train_test_split y classification_report: para evaluar la precisión del modelo.
-.pickle (Para guardar y cargar el modelo entrenado y el vectorizador).
+.TfidfVectorizer: Convierte textos limpios en vectores numéricos, necesarios para el modelo.
+.MultinomialNB: Modelo de clasificación supervisada adecuado para datos de texto categorizados en riesgo bajo, medio o alto.
+.train_test_split y classification_report: Herramientas para evaluar la precisión y fiabilidad del modelo.
+.pickle: Se utilizó para guardar y cargar el modelo entrenado y el vectorizador, asegurando consistencia entre entrenamiento y API.
 
-4.API REST
+4.API REST:
+.FastAPI: Framework ligero y moderno para crear APIs REST, que permite exponer el modelo ML a través de endpoints de manera eficiente.
+.Uvicorn: Servidor ASGI para ejecutar la API, ofreciendo rapidez y soporte para recarga automática durante el desarrollo.
 
-FastAPI:
-.Framework ligero y moderno para crear APIs REST(Facilita el envío de textos desde la interfaz web al modelo ML).
-.Uvicorn(Servidor ASGI para ejecutar la API de forma rápida y eficiente).
-
-5.Base de datos
-
-SQLite:
-.Base de datos relacional ligera para almacenar predicciones y feedback del usuario(No requiere instalación de servidores adicionales, ideal para proyectos locales).
+5.Base de datos:
+.SQLite: Base de datos relacional ligera, utilizada para almacenar textos procesados, predicciones y feedback del usuario.
+Ventajas: no requiere instalación de servidores adicionales y es ideal para proyectos locales y pruebas de prototipo.
 
 6.Frontend:
-
-.HTML / CSS / JavaScript(Interfaz sencilla para que el usuario introduzca textos y reciba los resultados).
+HTML / CSS / JavaScript: Interfaz sencilla que permite al usuario introducir textos y visualizar los resultados del análisis.
 
 7.Entorno de desarrollo:
-
-.Visual Studio Code(Organización del proyecto y edición de código).
-.Entorno virtual (venv) (Para aislar las dependencias del proyecto y garantizar compatibilidad).
+.Visual Studio Code: Editor de código utilizado para organizar la estructura del proyecto y facilitar la edición del código.
+.Entorno virtual (venv): Se emplea para aislar las dependencias del proyecto y garantizar compatibilidad entre distintos entornos de desarrollo.

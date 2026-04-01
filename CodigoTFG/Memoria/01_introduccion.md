@@ -6,17 +6,24 @@ Qué es la clasificación de texto
 
 Por qué es importante detectar riesgo emocional
 
-Limitaciones éticas (no sustituye a profesionales)
+Limitaciones éticas (no sustituye a profesionales). 
+Esta información es relevante porque permite ofrecer orientación y apoyo preventivo, aunque no sustituye en ningún caso el diagnóstico o la intervención de profesionales de la salud. Se trata de una herramienta de apoyo informativo, con limitaciones éticas que deben tenerse en cuenta.
+Desde un punto de vista ético, este sistema presenta diversas limitaciones:
+.En primer lugar, el modelo puede verse afectado por sesgos presentes en el dataset, lo que podría influir en la precisión de las predicciones.
+.Pueden producirse falsos positivos o falsos negativos, lo que implica que el sistema no debe utilizarse como herramienta de diagnóstico, sino únicamente como apoyo informativo.
+.Se debe considerar la privacidad de los datos introducidos por los usuarios, evitando el almacenamiento de información sensible sin consentimiento explícito.
+
+Por todo ello, se recalca que la aplicación no sustituye la intervención de profesionales de la salud mental.
 
 1.Preparacion del entorno :
-.cree estructura de proyecto dentro de visual studio 
-.instale librerias ( pandas, spacy, scikit-learn)
-.configure y active venv 
+.Se creó la estructura del proyecto en Visual Studio Code, organizando los módulos en carpetas diferenciadas para facilitar la    mantenibilidad y escalabilidad del sistema.
+.Se instalaron las librerias necesarias ( pandas, spacy, scikit-learn)
+.Se configuró y activo el venv.
 
 2.Dataset y preprocesamiento de texto:
 .dataset inicial con textos y niveles de riesgo
 .funcion limpiar_y_lematizar para limpiar y lematizar textos 
-.probe que la funcion funciona correctamente y limpia los textos 
+.Se probo que la función funcionaba correctamente y limpiaba los textos. 
 
 3.entrenamiento de modelo ML
 .vectorizacion TF-IDF de los textos 
@@ -74,6 +81,8 @@ Para la clasificación de riesgo emocional se siguieron los siguientes pasos:
 
 .Vectorización TF-IDF de los textos, convirtiendo el texto en vectores numéricos para que el modelo pueda procesarlos.
 .Entrenamiento de un modelo Multinomial Naive Bayes, adecuado para clasificación de texto.
+ (Se ha seleccionado el algoritmo Multinomial Naive Bayes debido a su buen rendimiento en tareas de clasificación de texto y su bajo coste computacional. Este modelo es especialmente adecuado para representaciones basadas en frecuencias como TF-IDF.
+ Además, se ha priorizado la simplicidad y rapidez de entrenamiento frente a modelos más complejos como la regresión logística o redes neuronales, ya que el objetivo del proyecto es construir un sistema funcional y eficiente dentro del alcance del módulo.)
 .Evaluación del modelo con classification_report, incluyendo métricas de precisión, recall y F1-score.
 .Guardado del modelo (model.pkl) y del vectorizador (vectorizer.pkl) mediante Pickle, para su posterior uso en la API.
 
