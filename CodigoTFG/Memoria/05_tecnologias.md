@@ -32,3 +32,4 @@ Se ha mejorado la experiencia de usuario mediante la incorporación de elementos
 7.Entorno de desarrollo:
 .Visual Studio Code: Editor de código utilizado para organizar la estructura del proyecto y facilitar la edición del código.
 .Entorno virtual (venv): Se emplea para aislar las dependencias del proyecto y garantizar compatibilidad entre distintos entornos de desarrollo.
+.Automatización (.bat): se ha utilizado un script de Windows para automatizar la ejecución del sistema, permitiendo iniciar el entorno virtual, la API y la interfaz web de forma automática.
