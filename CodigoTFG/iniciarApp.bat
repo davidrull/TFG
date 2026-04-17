@@ -3,25 +3,28 @@
 
 cd /d %~dp0
 :: Se mueve automáticamente a la carpeta donde está el archivo .bat
+:: Esto permite que funcione desde cualquier ubicación
 
 echo Iniciando entorno virtual...
 :: Mensaje informativo para el usuario
 
-call venv\Scripts\activate
-:: Activa el entorno virtual del proyecto (venv)
+:: (NO usamos activate porque en Windows puede dar problemas de PATH)
+:: En su lugar usamos directamente el Python del entorno virtual
 
 echo Iniciando API FastAPI...
 :: Mensaje informativo
 
-start cmd /k "python -m uvicorn src.api.main:app --reload"
-:: Inicia la API en una nueva ventana de consola
-:: Se usa /k para que no se cierre la ventana
+start cmd /k "venv\Scripts\python -m uvicorn src.api.main:app --reload"
+:: Inicia la API REST con Uvicorn usando el Python del entorno virtual
+:: Esto asegura que usa las dependencias del venv correctamente
+:: /k mantiene la consola abierta para ver logs de la API
 
 timeout /t 3 >nul
-:: Espera 3 segundos para asegurarse de que la API arranca correctamente
+:: Espera 3 segundos para asegurarse de que la API ha arrancado correctamente
 
 echo Abriendo interfaz web...
 :: Mensaje informativo
 
 start http://127.0.0.1:5500/CodigoTFG/Frontend/index.html
-:: Abre el frontend SOLO cuando la API ya está en marcha
+:: Abre automáticamente la interfaz de usuario en el navegador
+:: (Frontend del proyecto ejecutado con Live Server)
