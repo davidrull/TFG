@@ -6,6 +6,7 @@ La aplicación se organiza en cuatro capas principales, siguiendo un diseño mod
 .Página web sencilla desarrollada con HTML, CSS y JavaScript.
 .Permite al usuario introducir un texto libre y enviar la petición al servidor para su análisis.
 .La interfaz incluye visualización del resultado del análisis y la probabilidad de cada categoría de riesgo emocional.
+Se ha incorporado una mejora en la representación de los resultados mediante elementos visuales dinámicos, incluyendo una codificación por colores y una barra de progreso que representa la confianza del modelo. Estas mejoras permiten una interpretación más intuitiva del resultado sin necesidad de interpretar valores numéricos.
 
 2.API REST (Backend):
 .Implementada con FastAPI.
@@ -116,3 +117,13 @@ Explicación:
 .El texto se convierte en vectores TF-IDF y se clasifica con el modelo ML.
 .El resultado, junto con la probabilidad de cada categoría, se envía al usuario y se almacena en la base de datos.
 .El feedback del usuario permite mejorar el sistema mediante reentrenamiento futuro.
+
+La capa de presentación incluye elementos visuales dinámicos (colores y barra de progreso) que mejoran la interpretabilidad de los resultados.
+
+.Se ha implementado un script de automatización mediante un archivo .bat, que permite iniciar todo el sistema con un único clic. Este script activa el entorno virtual, inicia la API REST desarrollada con FastAPI y abre automáticamente la interfaz web en el navegador.
+Esta automatización mejora la usabilidad del sistema, ya que evita la necesidad de ejecutar manualmente múltiples comandos en terminal y facilita la demostración del proyecto.
+
+.Se ha creado un acceso directo en el escritorio que permite al usuario abrir directamente la interfaz web de la aplicación. Este acceso apunta a la URL local del frontend(http://127.0.0.1:5500/CodigoTFG/Frontend/index.html) facilitando el uso del sistema sin necesidad de acceder manualmente al entorno de desarrollo.
+
+Esta solución mejora la experiencia de usuario, ya que simula el comportamiento de una aplicación de escritorio convencional.
+

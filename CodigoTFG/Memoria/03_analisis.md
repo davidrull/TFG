@@ -11,7 +11,13 @@ La elección de TF-IDF y MultinomialNB se fundamenta en su eficacia demostrada e
 Se implementó una API REST utilizando FastAPI, que permite recibir textos y devolver la predicción del riesgo emocional junto con la probabilidad asociada. La API incluye un endpoint de prueba (/) para verificar el funcionamiento del servicio. La carga del modelo y vectorizador se realiza desde archivos pickle previamente guardados, garantizando consistencia entre el entorno de entrenamiento y la API.
 
 4.Interacción con el usuario y almacenamiento:
-La aplicación permite que el usuario introduzca un texto libre, reciba la clasificación y visualice la probabilidad de cada nivel de riesgo. Todas las predicciones y el feedback del usuario se almacenan en una base de datos SQLite, lo que permite análisis posteriores y posibles mejoras del modelo mediante reentrenamiento con nuevos datos.
+La aplicación permite que el usuario introduzca un texto libre, reciba la clasificación y visualice la probabilidad de cada nivel de riesgo. Todas las predicciones se registran automáticamente en una base de datos SQLite, incluyendo:
+.Texto original introducido por el usuario.
+.Nivel de riesgo predicho por el modelo.
+.Confianza de la predicción (probabilidad máxima).
+.Feedback opcional proporcionado por el usuario.
+Esta información permite analizar los resultados, evaluar la precisión del modelo en situaciones reales y planificar posibles mejoras o reentrenamientos. 
+.La interfaz de usuario ha sido mejorada mediante la incorporación de elementos visuales dinámicos, como una codificación por colores y una barra de progreso que representa la confianza del modelo. Estas mejoras permiten una interpretación más intuitiva de los resultados sin necesidad de interpretar valores numéricos.
 Desde el punto de vista ético, se mantiene la privacidad de los textos introducidos y se recalca que esta herramienta no sustituye la intervención de profesionales de la salud, sino que proporciona información orientativa.
 
 5.Resultados y verificación:
@@ -21,6 +27,8 @@ Cada módulo se probó de forma independiente:
 .La API se probó localmente con Uvicorn, asegurando que devuelve resultados correctos ante distintas entradas.
 
 Este análisis demuestra que el flujo completo, desde la entrada del texto hasta la predicción y almacenamiento, está diseñado para ofrecer resultados rápidos, claros y reutilizables, manteniendo una separación clara entre preprocesamiento, modelado y servicio web. En futuras versiones, se podrían incluir gráficos o visualizaciones de estadísticas para facilitar la interpretación de los resultados.
+
+La incorporación de elementos visuales en la capa de presentación contribuye a mejorar la interpretabilidad del sistema, facilitando la comprensión del resultado por parte del usuario final y reforzando la utilidad práctica de la aplicación.
 
 Diagrama del flujo de datos:
 

@@ -26,7 +26,8 @@ Para el desarrollo de la aplicación se emplearon tecnologías modernas, ampliam
 Ventajas: no requiere instalación de servidores adicionales y es ideal para proyectos locales y pruebas de prototipo.
 
 6.Frontend:
-HTML / CSS / JavaScript: Interfaz sencilla que permite al usuario introducir textos y visualizar los resultados del análisis.
+HTML / CSS / JavaScript: Interfaz desarrollada para permitir la interacción del usuario con el sistema. El usuario introduce textos que son enviados a la API para su análisis, y los resultados se muestran de forma visual.
+Se ha mejorado la experiencia de usuario mediante la incorporación de elementos visuales dinámicos, como codificación por colores y una barra de progreso que representa la confianza del modelo. Estas mejoras facilitan la interpretación del resultado sin necesidad de interpretar valores numéricos, aumentando la usabilidad del sistema.
 
 7.Entorno de desarrollo:
 .Visual Studio Code: Editor de código utilizado para organizar la estructura del proyecto y facilitar la edición del código.

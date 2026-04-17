@@ -81,8 +81,8 @@ Para la clasificación de riesgo emocional se siguieron los siguientes pasos:
 
 .Vectorización TF-IDF de los textos, convirtiendo el texto en vectores numéricos para que el modelo pueda procesarlos.
 .Entrenamiento de un modelo Multinomial Naive Bayes, adecuado para clasificación de texto.
- (Se ha seleccionado el algoritmo Multinomial Naive Bayes debido a su buen rendimiento en tareas de clasificación de texto y su bajo coste computacional. Este modelo es especialmente adecuado para representaciones basadas en frecuencias como TF-IDF.
- Además, se ha priorizado la simplicidad y rapidez de entrenamiento frente a modelos más complejos como la regresión logística o redes neuronales, ya que el objetivo del proyecto es construir un sistema funcional y eficiente dentro del alcance del módulo.)
+(Se ha seleccionado el algoritmo Multinomial Naive Bayes debido a su buen rendimiento en tareas de clasificación de texto y su bajo coste computacional. Este modelo es especialmente adecuado para representaciones basadas en frecuencias como TF-IDF.
+Además, se ha priorizado la simplicidad y rapidez de entrenamiento frente a modelos más complejos como la regresión logística o redes neuronales, ya que el objetivo del proyecto es construir un sistema funcional y eficiente dentro del alcance del módulo.)
 .Evaluación del modelo con classification_report, incluyendo métricas de precisión, recall y F1-score.
 .Guardado del modelo (model.pkl) y del vectorizador (vectorizer.pkl) mediante Pickle, para su posterior uso en la API.
 
@@ -132,7 +132,9 @@ La aplicación ofrece al usuario las siguientes funcionalidades:
 .Análisis automático del texto: el sistema limpia y procesa el texto, transformándolo en vectores para el modelo.
 .Clasificación del riesgo emocional: el modelo devuelve uno de los tres niveles de riesgo: bajo, medio o alto.
 .Visualización del resultado: se muestra el resultado junto con la probabilidad de cada categoría.
+.Representación visual del resultado: se ha incorporado una mejora en la interfaz de usuario mediante la utilización de codificación por colores y una barra de progreso dinámica. Los colores permiten identificar de forma rápida el nivel de riesgo (verde bajo, naranja medio y rojo alto), mientras que la barra de progreso representa de forma visual la confianza del modelo en la predicción realizada.
 .Feedback del usuario: el usuario puede indicar si considera correcta la predicción.
+.Mejora de la experiencia de usuario (UX): se ha optimizado la presentación de resultados para facilitar su interpretación, reduciendo la dependencia de valores numéricos y priorizando elementos visuales intuitivos.
 .Registro de predicciones: todas las predicciones y el feedback se almacenan en una base de datos SQLite para análisis posterior y mejora del modelo.
 
 Se adjuntan pantallazos de las pruebas realizadas del funcionamiento del preprocesamiento, del funcionamiento del ML y de el mismo funcionamiento de la API. 

@@ -1,0 +1,38 @@
+<!-- Conectamos el archivo CSS -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Contenedor principal centrado -->
+<div class="container">
+
+    <!-- Título de la aplicación -->
+    <h1>Clasificador de Riesgo Emocional</h1>
+
+    <!-- Área donde el usuario escribe el texto -->
+    <textarea id="texto" placeholder="Escribe cómo te sientes..."></textarea>
+
+    <!-- Botón para enviar el texto a la API -->
+    <button onclick="analizarTexto()">Analizar</button>
+
+    <!-- Zona donde se mostrará el resultado -->
+    <div id="resultado" class="hidden">
+        <h2>Resultado</h2>
+        <p id="riesgo"></p>
+        <p id="confianza"></p>
+        
+        <!-- BARRA DE RIESGO -->
+            <div class="barra-fondo">
+                <div id="barra-riesgo" class="barra"></div>
+            </div>
+    </div>
+
+    <!-- Botones de feedback -->
+    <div id="feedback" class="hidden">
+        <p>¿Fue correcta la predicción?</p>
+        <button onclick="enviarFeedback('Correcto')">✔ Correcto</button>
+        <button onclick="enviarFeedback('Incorrecto')">✘ Incorrecto</button>
+    </div>
+
+</div>
+
+<!-- Conectamos el archivo JavaScript -->
+<script src="script.js"></script>
