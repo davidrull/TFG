@@ -14,7 +14,7 @@ echo Iniciando entorno virtual...
 echo Iniciando API FastAPI...
 :: Mensaje informativo
 
-start cmd /k "venv\Scripts\python -m uvicorn src.api.main:app --reload"
+start cmd /k "venv\Scripts\python -m uvicorn src.Api.main:app --reload"
 :: Inicia la API REST con Uvicorn usando el Python del entorno virtual
 :: Esto asegura que usa las dependencias del venv correctamente
 :: /k mantiene la consola abierta para ver logs de la API
