@@ -162,3 +162,8 @@ Feedback: Correcto
 Esto demuestra que la información enviada a la API se almacena correctamente en la base de datos, incluyendo el texto original, el nivel de riesgo, la confianza y el feedback del usuario.
 
 Con estas pruebas se asegura que tanto la API como la base de datos funcionan correctamente, y que la información puede ser utilizada para análisis posteriores o reentrenamiento del modelo.
+
+6.Prueba de integración del sistema:
+.Se realizó una prueba completa del sistema mediante la ejecución automatizada con el script .bat.
+.Se verificó que el acceso directo permite iniciar la aplicación correctamente, lanzando el servidor de la API y la interfaz web.
+Además, se comprobó que la interacción del usuario desde la interfaz web genera correctamente una petición a la API, obteniendo la predicción del modelo y su visualización en pantalla.

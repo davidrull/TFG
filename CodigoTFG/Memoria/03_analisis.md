@@ -28,6 +28,9 @@ Cada módulo se probó de forma independiente:
 
 Este análisis demuestra que el flujo completo, desde la entrada del texto hasta la predicción y almacenamiento, está diseñado para ofrecer resultados rápidos, claros y reutilizables, manteniendo una separación clara entre preprocesamiento, modelado y servicio web. En futuras versiones, se podrían incluir gráficos o visualizaciones de estadísticas para facilitar la interpretación de los resultados.
 
+Para la ejecución del sistema completo se ha implementado un script de automatización (.bat) que inicia tanto la API REST como el servidor HTTP local en Python para la interfaz web. Esto permite que el flujo completo del sistema esté operativo con un único comando, sin necesidad de configuración manual por parte del usuario.
+Este enfoque permite considerar la aplicación como un sistema integrado end-to-end, en el que todos los componentes (interfaz, API, modelo y base de datos) funcionan de forma coordinada.
+
 La incorporación de elementos visuales en la capa de presentación contribuye a mejorar la interpretabilidad del sistema, facilitando la comprensión del resultado por parte del usuario final y reforzando la utilidad práctica de la aplicación.
 
 Diagrama del flujo de datos:

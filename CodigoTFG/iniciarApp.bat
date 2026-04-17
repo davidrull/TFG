@@ -8,7 +8,7 @@ cd /d %~dp0
 echo Iniciando API FastAPI...
 :: Mensaje informativo
 
-start cmd /k "venv\Scripts\python -m uvicorn src.Api.main:app --reload"
+start  cmd /k "venv\Scripts\python -m uvicorn src.Api.main:app --reload"
 :: Inicia la API REST con FastAPI usando el entorno virtual (venv)
 :: /k mantiene la consola abierta para ver los logs del servidor
 

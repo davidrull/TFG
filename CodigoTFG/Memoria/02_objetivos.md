@@ -38,7 +38,12 @@ Esto permite analizar el rendimiento del modelo con datos reales y planificar me
 6.Mejora de la visualización de resultados:
 Se ha mejorado la interfaz de usuario mediante la incorporación de elementos visuales dinámicos, como una codificación por colores y una barra de progreso, con el objetivo de facilitar la interpretación del nivel de riesgo emocional y mejorar la experiencia del usuario.
 
-6.Pruebas y validación del sistema:
+7.Automatización del sistema:
+Se implementó un sistema de automatización mediante un archivo .bat que permite la ejecución completa de la aplicación con un único comando. Este script inicia el entorno virtual, lanza la API REST desarrollada con FastAPI y pone en marcha un servidor HTTP local en Python para servir la interfaz web.
+Esta automatización elimina la necesidad de ejecutar manualmente múltiples procesos y reduce la dependencia de herramientas del entorno de desarrollo, mejorando la usabilidad y la experiencia de ejecución del sistema.
+
+8.Pruebas y validación del sistema:
 Se realizaron pruebas del preprocesamiento con textos de ejemplo.
 Se verificó el rendimiento del modelo utilizando un conjunto de datos de prueba.
 Se comprobó el correcto funcionamiento de la API mediante testeo de los endpoints.
+Se realizaron pruebas de integración completa del sistema, validando el flujo end-to-end. Se comprobó que la interfaz web funciona correctamente mediante el servidor HTTP local en Python, que las peticiones se envían a la API y que el modelo devuelve y muestra las predicciones de forma correcta.

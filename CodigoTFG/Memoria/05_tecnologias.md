@@ -28,10 +28,12 @@ Ventajas: no requiere instalación de servidores adicionales y es ideal para pro
 6.Frontend:
 HTML / CSS / JavaScript: 
 .Interfaz desarrollada para permitir la interacción del usuario con el sistema. El usuario introduce textos que son enviados a la API para su análisis, y los resultados se muestran de forma visual.
-.La interfaz se sirve mediante un servidor HTTP local implementado con Python (http.server), lo que permite la ejecución del sistema sin depender de herramientas externas como Live Server o extensiones del entorno de desarrollo.
+.La interfaz se sirve mediante un servidor HTTP local en Python (http.server), permitiendo la ejecución del sistema sin dependencias de herramientas externas.
 .Se ha mejorado la experiencia de usuario mediante la incorporación de elementos visuales dinámicos, como codificación por colores y una barra de progreso que representa la confianza del modelo. Estas mejoras facilitan la interpretación del resultado sin necesidad de interpretar valores numéricos, aumentando la usabilidad del sistema.
 
 7.Entorno de desarrollo:
 .Visual Studio Code: Editor de código utilizado para organizar la estructura del proyecto y facilitar la edición del código.
 .Entorno virtual (venv): Se emplea para aislar las dependencias del proyecto y garantizar compatibilidad entre distintos entornos de desarrollo.
 .Automatización (.bat): se ha utilizado un script de Windows para automatizar la ejecución del sistema, permitiendo iniciar el entorno virtual, la API y la interfaz web de forma automática.
+
+Todas las tecnologías descritas se integran en un sistema único que permite el flujo completo desde la interfaz de usuario hasta la predicción del modelo y el almacenamiento de resultados. Esta integración se automatiza mediante un script (.bat) que facilita la ejecución del sistema completo.
