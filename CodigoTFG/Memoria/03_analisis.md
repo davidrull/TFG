@@ -28,8 +28,7 @@ Cada módulo se probó de forma independiente:
 
 Este análisis demuestra que el flujo completo, desde la entrada del texto hasta la predicción y almacenamiento, está diseñado para ofrecer resultados rápidos, claros y reutilizables, manteniendo una separación clara entre preprocesamiento, modelado y servicio web. En futuras versiones, se podrían incluir gráficos o visualizaciones de estadísticas para facilitar la interpretación de los resultados.
 
-Para la ejecución del sistema completo se ha implementado un script de automatización (.bat) que inicia tanto la API REST como el servidor HTTP local en Python para la interfaz web. Esto permite que el flujo completo del sistema esté operativo con un único comando, sin necesidad de configuración manual por parte del usuario.
-Este enfoque permite considerar la aplicación como un sistema integrado end-to-end, en el que todos los componentes (interfaz, API, modelo y base de datos) funcionan de forma coordinada.
+El sistema se ejecuta de forma manual. La API REST se inicia con Uvicorn y la interfaz web se ejecuta mediante Live Server en Visual Studio Code. Esto permite una separación clara entre el frontend y el backend.
 
 La incorporación de elementos visuales en la capa de presentación contribuye a mejorar la interpretabilidad del sistema, facilitando la comprensión del resultado por parte del usuario final y reforzando la utilidad práctica de la aplicación.
 
@@ -39,7 +38,7 @@ Usuario
    │
    ▼
 Interfaz Web
-(HTML / JavaScript)
+(HTML / JavaScript ejecutada con Live Server)
    │
    ▼
 API REST
@@ -64,7 +63,7 @@ Texto original, Predicción, Feedback usuario
 
 Explicación del diagrama:
 .Usuario: introduce un texto libre describiendo cómo se siente o una situación personal.
-.Interfaz Web: recoge el texto y envía la solicitud a la API REST.
+.Interfaz Web: recoge el texto y envía la solicitud a la API REST (La interfaz se ejecuta mediante Live Server).
 .API REST (FastAPI): recibe la petición, verifica que el modelo y el vectorizador están cargados, y llama al preprocesamiento.
 .Preprocesamiento NLP: se limpian los textos usando la función limpiar_y_lemmatizar.
 .Modelo de ML: transforma el texto en vectores TF-IDF y clasifica el riesgo emocional usando Multinomial Naive Bayes.

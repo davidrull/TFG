@@ -7,7 +7,7 @@ La aplicación se organiza en cuatro capas principales, siguiendo un diseño mod
 .Permite al usuario introducir un texto libre y enviar la petición al servidor para su análisis.
 .La interfaz incluye visualización del resultado del análisis y la probabilidad de cada categoría de riesgo emocional.
 Se ha incorporado una mejora en la representación de los resultados mediante elementos visuales dinámicos, incluyendo una codificación por colores y una barra de progreso que representa la confianza del modelo. Estas mejoras permiten una interpretación más intuitiva del resultado sin necesidad de interpretar valores numéricos.
-.La interfaz se sirve mediante un servidor HTTP local implementado con Python (http.server), lo que permite la ejecución del sistema sin depender de herramientas externas como Live Server.
+.La interfaz se ejecuta mediante Live Server desde Visual Studio Code, permitiendo servir el frontend de forma local en el navegador.
 
 2.API REST (Backend):
 .Implementada con FastAPI.
@@ -96,7 +96,7 @@ CodigoTFG/
    Usuario
       │
       ▼
-Interfaz Web (HTML/JS servida con Python HTTP Server)
+Interfaz Web (HTML/JS servida con Live Server)
       │
       ▼
  API REST (FastAPI)
@@ -111,6 +111,8 @@ Resultado y probabilidad
       ▼
 Base de datos SQLite (predicciones + feedback)
 
+.El sistema se compone de dos servicios independientes: una API REST desarrollada con FastAPI que ejecuta el modelo de Machine Learning, y una interfaz web que actúa como cliente, enviando solicitudes HTTP a la API y mostrando los resultados al usuario.
+
 Explicación:
 
 .El usuario introduce un texto libre describiendo su situación o emociones.
@@ -121,11 +123,8 @@ Explicación:
 
 La capa de presentación incluye elementos visuales dinámicos (colores y barra de progreso) que mejoran la interpretabilidad de los resultados.
 
-.Se ha implementado un script de automatización mediante un archivo .bat, que permite iniciar todo el sistema con un único clic. Este script activa el entorno virtual, inicia la API REST desarrollada con FastAPI y lanza un servidor HTTP local en Python para servir la interfaz web.
-Esta automatización mejora la usabilidad del sistema, ya que evita la necesidad de ejecutar manualmente múltiples comandos en terminal y facilita la demostración del proyecto.
+.El sistema se ejecuta de forma manual, iniciando la API con Uvicorn y la interfaz web mediante Live Server en Visual Studio Code.
 
-.Se ha creado un acceso directo en el escritorio que permite al usuario abrir directamente la interfaz web de la aplicación. Este acceso apunta a la URL local del frontend:
-http://127.0.0.1:5500/ facilitando el uso del sistema sin necesidad de acceder manualmente al entorno de desarrollo.
+.La aplicación se accede directamente desde el navegador a través de Live Server, sin necesidad de accesos directos externos.
 
-Esta solución mejora la experiencia de usuario, ya que simula el comportamiento de una aplicación de escritorio convencional.
 

@@ -127,7 +127,9 @@ Ejemplo de respuesta de la API:
 .Esto demuestra que la API recibe correctamente los datos, ejecuta el preprocesamiento, realiza la predicción con el modelo y devuelve la información junto con la probabilidad.
 
 5.Verificación de la base de datos SQLite desde Python:
-.Para comprobar que las predicciones y el feedback se guardaban correctamente, se abrió la base de datos directamente desde el intérprete de Python usando el módulo sqlite3:
+.Para comprobar que las predicciones y el feedback se guardaban correctamente, se abrió la base de datos directamente desde el intérprete de Python usando el módulo sqlite3.
+
+Para verificar el correcto almacenamiento de los datos, se realizaron consultas directas a la base de datos SQLite, comprobando que se registran correctamente el identificador, el texto introducido, el nivel de riesgo y la confianza de la predicción.
 
 import sqlite3
 
@@ -164,6 +166,21 @@ Esto demuestra que la información enviada a la API se almacena correctamente en
 Con estas pruebas se asegura que tanto la API como la base de datos funcionan correctamente, y que la información puede ser utilizada para análisis posteriores o reentrenamiento del modelo.
 
 6.Prueba de integración del sistema:
-.Se realizó una prueba completa del sistema mediante la ejecución automatizada con el script .bat.
-.Se verificó que el acceso directo permite iniciar la aplicación correctamente, lanzando el servidor de la API y la interfaz web.
-Además, se comprobó que la interacción del usuario desde la interfaz web genera correctamente una petición a la API, obteniendo la predicción del modelo y su visualización en pantalla.
+.Se realizó una prueba completa del sistema ejecutando manualmente la API con Uvicorn y la interfaz web mediante Live Server. 
+.Se comprobó que el flujo completo funciona correctamente desde el navegador hasta la API.
+
+.Para comprobar el correcto funcionamiento del sistema, se ejecuta la API utilizando Uvicorn desde el entorno virtual del proyecto:
+
+venv\Scripts\python -m uvicorn src.Api.main:app --reload
+
+Este comando inicia el servidor de FastAPI utilizando el Python del entorno virtual, lo que garantiza que se utilizan todas las dependencias instaladas en el proyecto. Además, el parámetro --reload permite que el servidor se reinicie automáticamente cuando se realizan cambios en el código durante el desarrollo.
+
+Una vez ejecutado, la API queda disponible en:
+
+http://127.0.0.1:8000
+
+y permite acceder a la documentación interactiva en:
+
+http://127.0.0.1:8000/docs
+
+Una vez iniciada la API, la interfaz web se ejecuta de forma independiente mediante un servidor local (Live Server en Visual Studio Code o servidor HTTP en Python). Esto permite abrir el archivo index.html en el navegador y establecer la comunicación con la API en tiempo real mediante peticiones HTTP.
