@@ -184,3 +184,25 @@ y permite acceder a la documentación interactiva en:
 http://127.0.0.1:8000/docs
 
 Una vez iniciada la API, la interfaz web se ejecuta de forma independiente mediante un servidor local (Live Server en Visual Studio Code o servidor HTTP en Python). Esto permite abrir el archivo index.html en el navegador y establecer la comunicación con la API en tiempo real mediante peticiones HTTP.
+
+En la fase final del desarrollo del sistema se han implementado scripts específicos con el objetivo de validar el correcto funcionamiento del modelo de Machine Learning antes de su integración en la API.
+
+Para ello, se han utilizado dos archivos principales:
+
+evaluate_model.py: utilizado para comprobar el rendimiento del modelo mediante métricas de clasificación.
+predict_test.py: utilizado para realizar predicciones manuales con ejemplos de texto y verificar el comportamiento del modelo entrenado.
+
+Estos scripts permiten validar de forma independiente que:
+
+El modelo se ha entrenado correctamente.
+El vectorizador TF-IDF funciona adecuadamente.
+Las predicciones obtenidas son coherentes con los datos de entrada.
+El sistema puede operar de forma autónoma sin depender de la API ni de la interfaz web.
+
+Ejemplo de ejecución del script de pruebas:
+
+Texto: “Estoy muy feliz hoy”
+Predicción: bajo
+Confianza: 0.87
+
+Estas pruebas han sido realizadas en la fase final del proyecto y han permitido asegurar que el modelo es funcional antes de su despliegue completo en el sistema.
